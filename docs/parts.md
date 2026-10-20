@@ -2,9 +2,31 @@
 
 Author: Colin Rooney · © 2026 Rooney Industries LLC · MIT licence
 
-This combines the recorded truck's fitted/owned parts with required build materials and recommended repair supplies. Choose materials to suit your assembly and check what your bundle includes. Fitted claims describe the historical build; ownership alone does not establish installation. Some items came with the truck or controller bundle and are not extra orders.
+Use this shopping check with the [assembly walkthrough](assembly.md). Historical fitted/owned parts are distinguished from required purchases; ownership alone does not establish installation. Five [cradle reference files](../prints/phone-cradle/README.md) are supplied, not a universal truck kit.
 
-Historical list and paid prices below retain their source comments and dates; no new price is inferred. Unpriced means no supported price is recorded. Read [mounting and repairability](assembly.md), [clean receiver wiring](wiring-connectors.md) and [prints](prints.md) alongside this list. Five [phone-cradle reference print files](../prints/phone-cradle/README.md) are supplied; historical compute/FC carrier files are optional references and are not supplied here. Full commissioning assets remain outstanding.
+## Required shopping: check your bundle first
+
+For the recorded hardware path, check these items before buying. Quantities below are supported references; unknown counts stay unknown. Existing truck/controller bundles may already contain required items. Vendor compatibility must be checked on your actual parts. Prices lower on this page are dated history, not current recommendations.
+
+| Item | Quantity | Check bundle / buy if missing | Reference |
+|---|---|---|---|
+| Traxxas Stampede 2WD HD (36254-8) | 1 | buy separately if missing | [traxxas.com](https://traxxas.com/36254-8-stampede-2wd-xl-5-wbattery) |
+| Traxxas XL-5 speed controller | 1 | included/check bundle | none |
+| Traction pack, 7-cell NiMH, Traxxas connector <!-- F:3117, INV:17 --> | not recorded (sold with the chassis <!-- F:154 -->) | included/check bundle | none |
+| Holybro PM02 V3 power module | 1 | included/check bundle | none |
+| TRX-to-XT60 adapters (male and female, both ways) | not recorded | buy separately if missing | none |
+| Holybro Pixhawk 6C Mini | 1 | buy separately if missing; check PM02 bundle | none |
+| RadioMaster MT12 Surface (EdgeTX, ExpressLRS) | 1 | buy separately if missing; check receiver bundle | [radiomasterrc.com](https://radiomasterrc.com/products/mt12-surface-radio-controller) |
+| RadioMaster ER5C-i ExpressLRS receiver | 1 | buy separately if missing; fitted ER5C-i differs from ER3C-i bundle | [radiomasterrc.com](https://radiomasterrc.com/collections/all/products/er5c-i-2-4ghz-elrs-pwm-receiver) |
+| NVIDIA Jetson Orin Nano Super 8 GB | 1 | buy separately if missing | [NVIDIA kit information](https://developer.nvidia.com/embedded/jetson-developer-kits); [historical retailer](https://www.microcenter.com/product/691058/Jetson_Orin_Nano_Super_Developer_Kit) <!-- B10:9 --> |
+| INIU USB-C PD power bank | 1 | buy separately if missing | none |
+| USB-C PD to DC cable, 15 V, 5.5×2.5 mm, recorded 4.9 ft | 1 | buy separately if missing | none |
+| USB wireless adapter, Realtek RTL8812AU chipset | 1 | buy separately if missing | none |
+| iPhone | 1 | buy separately if missing | none |
+
+Also required for this walkthrough: compatible traction charger/lead; transmitter batteries and charging supply; PM02 power/sense lead; TRX↔XT60 adapters for both module ends; correctly mapped four-wire receiver harness; steering/ESC leads; separate phone and FC USB data cables; suitable supports, secure straps/bands and electrical separation; metric drivers, cutters/ruler and a multimeter for unpowered checks. **Check bundle / buy if missing**; quantities depend on your selected route except where the tables below record them. See [connection specifications](#connections-storage-and-charging) and [mounting materials/tools](#mounting-materials-and-tools) before ordering.
+
+For the selected reference cradle: one tray, riser, T-bar and retaining pin; one optional shim only if wanted. Arrange printer/slicer/PETG access and the [recorded joint hardware](#recorded-cradle-joint-quantities), checking your phone and body-post fit first. For the recorded software path, also arrange NVMe boot storage, session space, phone/app access, bank charging and network/recovery access as detailed below. Soldering tools are required only if choosing soldered construction; a correctly terminated harness is preferred. Calibration tools are required for the later chosen calibration procedure. Compute/FC trays, GPS and spares are optional.
 
 ## Status and remaining fit details
 
@@ -20,6 +42,8 @@ Shopping actions use these labels throughout: **included/check bundle**, **buy s
 The [build checkpoints](build-checkpoints.md) retain separate software, configuration and powered-acceptance gaps. Use the [public ROS setup/build guide](https://github.com/12mv2/robo-bump-truck-ros#build-and-test) for host tools and dependencies. Robot Eyes stays closed source; phone/app access is a separate prerequisite on the [ROS connection page](ros.md#robot-eyes-the-phone-app).
 
 ## Parts list
+
+Historical list and paid prices retain their original source comments and dates. Unpriced means no supported price is recorded; retail bundle contents and compatibility need checking.
 
 | Part | Role | Qty | List price | As of | Link | Paid (receipt) | Shopping action |
 |---|---|---|---|---|---|---|---|

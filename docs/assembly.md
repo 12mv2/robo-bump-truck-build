@@ -2,52 +2,27 @@
 
 Author: Colin Rooney · © 2026 Rooney Industries LLC · MIT licence
 
-I want to drive this thing, learn something, fix what broke, and keep going. It is still an RC truck. Rollovers and crashes are part of the fun; spending the rest of the afternoon rebuilding a precious mount is less fun. Protect the expensive phone and compute, and make the ordinary repairs quick.
+Follow this once from parts to an unpowered physical build. Keep repairs practical: protect the expensive phone and compute, and make removable assemblies easy to reach.
 
-This is mounting guidance alongside the historical [prints](prints.md), [parts](parts.md) and [commissioning boundaries](build-checkpoints.md), not a newly accepted drive recipe.
+<a id="build-completion-list"></a>
+<a id="unpowered-assembly-sequence"></a>
 
-## Build completion list
+1. **Gather parts and check the bundle.** Open the [required shopping list](parts.md#required-shopping-check-your-bundle-first). Check included items before ordering; select mounts and verify mating connectors rather than buying a universal kit. Historical compute/FC carriers are optional references whose files are not supplied. Choose secure bands/straps and suitable supports or trays. Gather a meter for unpowered wiring checks. Disconnect every supply before starting, including traction pack, compute power bank and all USB power sources.
 
-The five [cradle reference files](../prints/phone-cradle/README.md) are a chosen phone-mount reference: four core parts and an optional single shim, rather than a universal truck kit. Secure band/strap mounting is a normal choice; optional trays can locate and support equipment. Use historical carrier designs if they suit your build, or choose secure supports with bands or straps.
+2. **Mount compute, flight controller and batteries without power.** Use the [body-off reference photo](img/truck-assembly-2026-10-14.jpg) for orientation; its phone mount is absent. Support the boards and provide electrical isolation from conductive supports and other boards. Keep the Orin fan, gears, steering linkage, FC top servo rail and upward leads clear. Leave USB, SD and telemetry access available. Retain batteries in suitable holders/straps and verify equipment stays attached upside down. Bands are the author’s practical repair preference, not a controlled crash comparison: replace aged bands, route them around supports clear of contacts, and leave enough cable slack to lift an assembly without pulling sockets. Tape cannot substitute for sound mechanical fit. Check shell removal without snagging cables.
 
-- Choose a secure mount and check board support, electrical separation, fan, connector and FC servo-rail clearance, equipment retention and shell removal.
-- If using the reference T-bar, check its selected body-post interface and hardware on your truck. Historical black-block identity and hardware counts remain unknown; they do not block an alternative mount.
-- Fit the selected cradle and phone. Check the two M4 tray/riser bolts for actual engagement and no phone contact; see the [cradle instructions](../prints/phone-cradle/README.md#assembly).
-- Match cable data capability, connector ends, pinout and polarity. Choose convenient routing with slack and strain relief; no fixed cable route or exhaustive band/fastener count is required.
-- Full firmware, parameter and radio model/mixer exports, and the intended controller package, remain necessary before powered commissioning under the [first-drive boundary](first-drive.md).
+3. **Print and fit the phone cradle.** Use one each of the four core references: [v26 tray](../prints/phone-cradle/v26_tray.stl), [v26 riser](../prints/phone-cradle/v26_riser.stl), [v66 T-bar](../prints/phone-cradle/v66_tbar.stl) and [v21b retaining pin](../prints/phone-cradle/v21b_pin.stl). The fifth file, [v10 5° shim](../prints/phone-cradle/v10_wedge5.stl), is optional: one between tray and riser only. Follow the [package orientation and assembly directions](../prints/phone-cradle/README.md#assembly) and [print guidance](prints.md); these files are individual objects, not print plates. Test your own phone/case fit gently; stop if the pin binds. Check retention, camera view, screen access and connector/cable clearance independently.
 
-Check your chosen mounting arrangement before powered use. Controller review and stopping checks remain separate requirements.
+   ![Cradle joint schematic, not a fitted-build photo](img/cradle-assembly.svg)
 
-## Unpowered assembly sequence
+   Seat two M4 hex nuts in the tray screen-face pockets. Use **two M4 bolts and two washers** from the riser back pockets through riser, optional single shim and tray camera face into those nuts. The riser mates to the tray camera face; do not reverse the phone to compensate for a reversed mount. M4×25 is a flat reference only; approximately 20–25 mm with the shim is the author’s recollection, not guaranteed fit. Verify head/washer seating, thread engagement, no bottoming and no phone contact in your actual stack. Join the foot/T-bar with the recorded **two M4×16 bolts, two washers and two wing nuts**; verify clearance and engagement. The T-bar spans a front or rear body-post pair through the shell opening, not a chassis slot. Its attachment hardware/count and historical black-block identity remain unknown; check your selected interface. Fit **one** standard v21b pin. The five meshes do not establish fit or strength for a complete truck.
 
-1. Gather the selected [parts](parts.md) and choose secure band/strap mounting, with trays/supports if useful. Historical carrier files are optional references, not required kit deliverables.
-2. Position and support the equipment. Keep the FC top servo rail, upward leads, USB/SD and telemetry access clear.
-3. Retain equipment with suitable bands, straps or selected fasteners. Keep the Orin fan, linkage and gears clear; provide electrical separation where needed.
-4. If choosing the reference cradle, follow its [joint schematic and instructions](../prints/phone-cradle/README.md#assembly). The optional single shim goes between tray and riser; its T-bar meets a body-post pair through the shell opening.
-5. Choose cable routes with lifting slack and strain relief. Check secure retention, shell removal and phone camera/screen/USB clearance without applying power.
+4. **Route and connect wiring with every supply disconnected.** Remove traction power, independent compute/phone supplies and **all USB connections that can supply power**, including FC-to-host USB. Pack removal alone does not isolate FC/receiver power. Lay out cables with lifting slack and strain relief, clear of moving parts and shell edges. Use the [recorded wiring diagram and endpoint table](wiring-connectors.md#specify-the-ends-and-every-connection), manufacturer pin-1 orientation and actual receiver labels; colours do not establish pinout. Prefer a correctly preterminated harness over the historical blue-tape soldered prototype. Verify connector family, mating gender, data capability, pinout and polarity; the proposed replacement is not fitted/tested.
 
-## Locate with a tray, retain for the job
+   For the recorded TELEM1/ER5C-i harness: six-position GH1.25 to four individual female 2.54 mm sockets, GH1 +5 V → receiver +, GH2 FC TX → CH3 Serial RX, GH3 FC RX → CH2 Serial TX, GH6 ground → −; insulate unused GH4/5. Confirm this receiver configuration rather than assuming universal ELRS assignments. Steering goes to MAIN1; the XL-5 three-wire lead goes to MAIN3. PM02 powers the FC only; XL-5 BEC powers the servo rail; the compute bank is independent and Orin USB can additionally feed FC/receiver. Keep a **single receiver supply** through TELEM1, without an added ESC/BEC receiver feed. See [power-domain isolation](power-and-safety.md#commissioning-and-isolation).
 
-I have tried bolts, gaffer tape, painter's tape and rubber bands. Overall, rubber bands are my favourite. They are quick to remove, let me reposition things, and give a little when the truck takes a hit. That is my practical preference, not a controlled crash comparison. Bands break and age; replace tired ones.
+5. **Check the physical build, still unpowered.** Verify retention, electrical separation, shell removal, fan/linkage clearance, phone fit and cable strain. Meter end-to-end continuity, exclude shorts and verify polarity and the single receiver power path against the endpoint table. Inspect connectors for correct seating. Keep supplies disconnected while correcting anything. Record your selected mount and unresolved fit details.
 
-The tray's job is to locate and support the equipment. If something rarely comes out, bolting it to its tray can make sense. For the removable tray/equipment assembly, bands can make the difference between a quick repair and taking half the truck apart. Leave enough cable slack to lift the assembly out without pulling on a socket, and support the cable before it reaches the connector.
+   Future powered commissioning separately needs the actual firmware/parameter exports, radio model/mixes and verified mapping. It must establish steering neutral, direction and each endpoint independently on this truck; equal PWM offsets do not prove symmetric mechanical travel. It also needs observed motor neutral/stopping, kill, override and link/intent/process-loss behaviour under the intended conditions. The XL-5 servo-supply weakness and recorded throttle/link-loss limits remain unresolved by tidy assembly. These are prerequisites for a separate supervised acceptance process, not powered instructions for this step; see [missing commissioning inputs](radio-and-controller.md#missing-commissioning-inputs) and [first-drive boundary](first-drive.md).
 
-Route bands around the supports, clear of the board and its connectors. The flight-controller sandwich keeps its top servo rail and upward leads clear. Preserve the specific [print constraints](prints.md). Keep bands and straps away from exposed contacts, the Orin fan, steering linkage and gears. Use an insulating pad where needed between electronics and supports; a layer of tape is not a substitute for a sound mechanical fit.
-
-Retain batteries in suitable holders/straps so a rollover cannot throw a pack into the wiring. Give the phone its correctly fitted cradle and retaining pin. Check that the shell can go on and come off without snagging a cable. A removable assembly still needs to stay attached when the truck is upside down.
-
-## Keep the truck looking like a truck
-
-My preference is to leave the shell mostly stock apart from the phone mount. The T-bar passes through the shell opening at the body-post interface; the wedge belongs between tray and riser, not at the T-bar foot. The [print page](prints.md) explains the selected-stack fit checks.
-
-I considered Ethernet and USB bulkheads on top of the shell; they were not fitted. Neat, easy access would be nice. But those cables would tether the shell to the Orin, adding another unplugging step every time it comes off. Choose the inconvenience you prefer. There is no universal winner.
-
-If my mounting choices sound like a personality test, blame my horoscope. That is a joke: I do not believe in astrology.
-
-## Do the useful check, then keep going
-
-Tiny-wire soldering was unpleasant. My prototype receiver connection ended up as a blue-tape blob. I would rather start with the correct [preterminated receiver harness](wiring-connectors.md) than repeat that repair.
-
-For new wiring, disconnect every supply, including flight-controller USB; check continuity, polarity and the single receiver power path before applying power. Then use the existing supervised commissioning boundary to observe neutral, direction and stopping. A tidy harness does not resolve the recorded servo-supply or throttle/link-loss limits.
-
-For mounting changes, check fit, retention, clearances and cable strain before moving on. Do the minimum useful test that answers the change you made. Once the separate drive acceptance is satisfied, drive it, expect repairs, and have fun. Fast iteration works when the phone survives and the next repair takes minutes.
+6. **Ready for software and configuration.** The V1 physical finish line means parts are mounted, the selected phone cradle fits, wiring is checked unpowered and remaining configuration gaps are recorded. It does not establish driving acceptance. Continue to [build checkpoints](build-checkpoints.md), which separates the public [ROS interface](ros.md) and outputs-disabled demonstration from the historical [Orin setup](orin-setup.md), [calibration](calibration.md) and powered commissioning. The current radio/FC configuration and complete autonomous package are not supplied. Phone/app access and unpublished weights remain separate prerequisites for the historical perception path; synthetic ROS work needs neither. No powered test is part of this walkthrough.
