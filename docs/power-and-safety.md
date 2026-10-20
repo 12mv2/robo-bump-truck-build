@@ -83,7 +83,7 @@ Plan a stall check into any speed controller before its first drive.
 
 On this truck the steering servo points straight at 1463 µs, not 1500 <!-- F:971 C:628 -->. Pose data put the zero crossing at 1461.2 µs, 1.8 µs away <!-- F:1077 C:217 -->. After the centre moved to 1463 µs with the maximum endpoint still at 1900, the servo had 437 µs of travel one way and 363 the other, so one side could be driven past the steering linkage's mechanical stop. Bringing the maximum to 1826 made it 363 each way <!-- F:971 C:630 -->.
 
-When you move the centre, move the endpoints with it so travel stays equal.
+After changing the centre, remeasure and recheck **both safe mechanical endpoints** without linkage binding, following the [own-build calibration checklist](calibration.md#own-build-measurement-checklist). Equal pulse-width spans alone do not establish mechanical clearance; the 363 µs spans above are this truck’s historical result.
 
 ### Power-cycling the Orin while the phone records
 

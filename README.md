@@ -49,7 +49,7 @@ The physical build remains the goal. The sequence below preserves the build reco
 Then, as needed:
 
 - [ros](docs/ros.md): the separate ROS 2 interface, and how the truck uses the Robot Eyes phone app.
-- [data](data/README.md): five sample runs and the controller log format.
+- [data](data/README.md): planned sample-run descriptions and controller log format (downloads not yet available).
 - [src/orin](src/orin/MANIFEST.md): the historical runs 27–31 Python snapshot, with a hash for every file.
 - [model](model/README.md): the project's historical steering head, plus voluntary [community model links](model/community.md) (currently empty).
 
