@@ -1,0 +1,30 @@
+# iPhone 17 Pro rear camera -- checkerboard calibration, 2026-09-21.
+# 124 views, coverage_4x4 = 1.0.
+# MEASURED, not Apple's factory table. Apple's table describes the lens BEFORE ARKit's own
+# geometric distortion correction and must NOT be applied to these frames.
+#
+# CAVEAT: the board reached 0.858 of the frame-corner radius; 0.05 % of corners went past 0.80.
+# Beyond r/corner ~ 0.86 every model here is extrapolating.
+# PREFERRED. Tracks Apple's own curve to ~3 px at the corner; corner value stable to 5 % across a 62/62 held-out split.
+# rms 0.196 px.
+image_width: 1920
+image_height: 1440
+camera_name: robot_eyes
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1344.557177, 0.000000, 958.524986, 0.000000, 1345.136264, 721.021451, 0.000000, 0.000000, 1.000000]
+distortion_model: rational_polynomial
+# Coefficient order (ROS/OpenCV rational_polynomial): k1, k2, p1, p2, k3, k4, k5, k6.
+distortion_coefficients:
+  rows: 1
+  cols: 8
+  data: [-2.47912106, 7.76260816, -0.00074866, -0.00019849, 153.42046681, -2.58807854, 7.86173618, 151.66450072]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1344.557177, 0.000000, 958.524986, 0.000000, 0.000000, 1345.136264, 721.021451, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000]

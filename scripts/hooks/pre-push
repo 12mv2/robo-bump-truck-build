@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+"""pre-push gate for robo-bump-truck-build (tracked copy; activate per clone with an ABSOLUTE path:
+git config core.hooksPath <clone>/scripts/hooks). Scans everything being pushed - the raw commit objects
+(identities and full messages), ref names, tag objects, every path, every blob - with the rules in
+scripts/gate_lib.py, then refuses every push unless ALLOW_PUSH=1 is set (the author's explicit go).
+The scan runs first so the gate can be tested without ever setting ALLOW_PUSH."""
+import os, pathlib, sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import gate_lib
+
+
+def fail(msg):
+    print("pre-push: REFUSED — " + msg, file=sys.stderr)
+    sys.exit(1)
+
+
+try:
+    try:
+        deny = gate_lib.load_denylist()
+    except gate_lib.GateError as exc:
+        fail(str(exc))
+    problems = gate_lib.audit_push(os.getcwd(), sys.stdin.read().splitlines(), deny)
+    for p in problems[:20]:
+        print("pre-push: REFUSED — " + p, file=sys.stderr)
+    if len(problems) > 20:
+        print("pre-push: ... and %d more" % (len(problems) - 20), file=sys.stderr)
+    if os.environ.get("ALLOW_PUSH") != "1":
+        fail("set ALLOW_PUSH=1 only on the author's explicit go (nothing leaves this repo by habit).")
+    if problems:
+        sys.exit(1)
+except SystemExit:
+    raise
+except Exception as exc:
+    fail("audit could not complete: " + repr(exc))

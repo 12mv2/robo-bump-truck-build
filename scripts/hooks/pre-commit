@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+"""pre-commit gate for robo-bump-truck-build (tracked; activate per clone with an ABSOLUTE path:
+git config core.hooksPath <clone>/scripts/hooks). Scans the STAGED blobs, not the working tree, with the
+same rules as check.py and the pre-push hook (scripts/gate_lib.py).
+Hits are reported by denylist line label, never by the string."""
+import os, pathlib, sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import gate_lib
+
+
+def fail(msg):
+    print("pre-commit: REFUSED — " + msg, file=sys.stderr)
+    sys.exit(1)
+
+
+try:
+    try:
+        deny = gate_lib.load_denylist()
+    except gate_lib.GateError as exc:
+        fail(str(exc))
+    problems = gate_lib.audit_staged(os.getcwd(), deny)
+    if problems:
+        for p in problems[:20]:
+            print("pre-commit: REFUSED — " + p, file=sys.stderr)
+        if len(problems) > 20:
+            print("pre-commit: ... and %d more" % (len(problems) - 20), file=sys.stderr)
+        sys.exit(1)
+except SystemExit:
+    raise
+except Exception as exc:
+    fail("staged scan could not complete: " + repr(exc))

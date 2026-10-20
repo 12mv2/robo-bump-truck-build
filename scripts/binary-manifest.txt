@@ -1,0 +1,13 @@
+# binary-manifest.txt - the only way a binary (or any content the gate cannot read) enters this repo.
+# One line per file: <sha256><two spaces><exact repo path>   (the output format of `shasum -a 256 PATH`)
+# A file passes only when BOTH its exact path and its SHA-256 match a line. Each line is a release
+# decision by the author.
+# 15 s field video, truck following an outdoor trail
+9c425429b5cc5cb649e5b44b7b5d0af7b557538e29f4e5d286343e4012573f4b  docs/img/field-run-trail-follow.mp4
+# Historical component photos, visually reviewed; pixels-only copies, originals retained.
+f59201ba44b6918bcd79b93c9f56b1ce050a6b98b18197030751a494a756fcbb  docs/img/compute-tray-2026-09-19.jpg
+968b08a606bebd59554016a0f4420f08a96aa536669936f3305b45e37307c452  docs/img/wifi-adapter-label-2026-09-24.jpg
+37bd6e9b1d383b4751efa8e8881200629f89a6c0d1a349f1ebdfe7ed27a553fc  docs/img/receiver-label-2026-09-19.jpg
+5b77b7d59fe19579ccb7eac6ba9efe5f31cf98727b01e660c69db6084869bc22  docs/img/truck-assembly-2026-10-14.jpg
+7e24186ed9c75fcfd3d6131b83d9be00fa441ee07b66cd016088815b75b27f33  docs/img/mt12-controls-2026-09-30.jpg
+f31b044c4015169fefeb1e0f7a1606596f76031169d252a26e62b311b091758c  docs/img/phone-mount-2026-09-12.jpg

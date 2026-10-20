@@ -1,0 +1,11 @@
+Robo Bump Truck: third-party attribution
+
+This repository does not contain DINOv2 code or weights. The truck loads the
+DINOv2 ViT-S/14 backbone from the upstream project at run time; it is not
+modified or redistributed here.
+
+DINOv2
+Copyright (c) Meta Platforms, Inc. and affiliates.
+Licensed under the Apache License, Version 2.0.
+Licence text: https://www.apache.org/licenses/LICENSE-2.0
+Upstream: https://github.com/facebookresearch/dinov2

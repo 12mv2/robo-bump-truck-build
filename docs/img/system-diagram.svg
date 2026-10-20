@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 460" width="1640" height="460" font-family="sans-serif" font-size="14">
+<title>Historical DINO truck architecture</title>
+<desc>Solid arrows are historical DINO drive connections. The dashed public ROS shadow input is an unimplemented integration concept, not a drive connection. The separate October 8 powered field kit is not depicted.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#222222"/></marker>
+</defs>
+<rect x="0" y="0" width="1640" height="460" fill="#ffffff"/>
+<g fill="#ffffff" stroke="#222222" stroke-width="1.5">
+<rect x="20" y="178" width="220" height="64" rx="6"/>
+<rect x="440" y="130" width="300" height="160" rx="6"/>
+<rect x="1070" y="178" width="170" height="64" rx="6"/>
+<rect x="1440" y="140" width="160" height="60" rx="6"/>
+<rect x="1440" y="230" width="160" height="60" rx="6"/>
+<rect x="20" y="380" width="140" height="50" rx="6"/>
+<rect x="440" y="380" width="160" height="50" rx="6"/>
+<rect x="440" y="20" width="300" height="64" rx="6"/>
+</g>
+<g fill="none" stroke="#222222" stroke-width="1.5" marker-end="url(#a)">
+<path d="M240,210 L440,210"/>
+<path d="M740,210 L1070,210"/>
+<path d="M160,405 L440,405"/>
+<path d="M600,405 L1155,405 L1155,242"/>
+<path d="M1240,200 L1440,170"/>
+<path d="M1240,220 L1440,260"/>
+<path d="M590,84 L590,130" stroke-dasharray="6 5"/>
+</g>
+<g fill="#222222" text-anchor="middle">
+<text x="1130" y="48" font-size="20">Historical DINO truck architecture</text>
+<text x="1130" y="72">Dashed = unimplemented public-shadow concept</text>
+<text x="130" y="206">Phone + Robot Eyes app</text>
+<text x="130" y="226">camera + ARKit pose</text>
+<text x="590" y="188">Orin</text>
+<text x="590" y="208">perception model + steering law</text>
+<text x="590" y="228">controller owner with seven guards</text>
+<text x="590" y="248">curvature: positive = right</text>
+<text x="1155" y="206">Flight controller</text>
+<text x="1155" y="226">ArduRover</text>
+<text x="1520" y="176">Steering servo</text>
+<text x="1520" y="266">Speed controller</text>
+<text x="90" y="410">Radio</text>
+<text x="520" y="410">Receiver</text>
+<text x="590" y="48">Public ROS shadow input (concept)</text>
+<text x="590" y="68">curvature: positive = left</text>
+<text x="340" y="176">one USB cable, USB-A port</text>
+<text x="340" y="194">video 15 fps, pose 15 Hz</text>
+<text x="905" y="176">USB</text>
+<text x="905" y="194" font-size="12">steering + throttle, sent together each tick</text>
+<text x="300" y="398">ELRS</text>
+<text x="880" y="375">CRSF over TELEM1</text>
+<text x="880" y="393">16 channels</text>
+<text x="1340" y="142">servo output 1</text>
+<text x="1340" y="158">straight = 1463 µs</text>
+</g>
+<g fill="#222222" text-anchor="start">
+<text x="606" y="102">unimplemented integration</text>
+<text x="606" y="120">wire sign negated exactly once at adapter</text>
+</g>
+</svg>

@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: MIT — © 2026 Rooney Industries LLC
+# Every third-party Python import of src/orin (live_trail.py and each module it loads), pinned to the
+# version installed on the truck's Orin, as read by pip3 list in the 2026-10-10 read-only probe.
+# Platform, not installable from this file:
+#   Python 3.10.12 on Ubuntu 22.04.5, JetPack 6.2.1 (L4T 36.4.7), aarch64
+#   TensorRT 10.3.0, a JetPack system package; this code does not import it
+#   torch is NVIDIA's Jetson build (reports CUDA 12.6 on the Orin); a PyPI wheel of the same version has no Orin GPU support
+#   ffmpeg, a system binary, decodes the phone stream (live_trail.py runs it as a subprocess)
+#   DINOv2-S/14 loads from a local torch.hub checkout and its checkpoint (see MANIFEST.md)
+numpy==1.26.4
+opencv-python-headless==5.0.0.93
+pymavlink==2.4.49
+torch==2.8.0
+# torchvision==0.23.0 is installed beside torch; this code does not import it

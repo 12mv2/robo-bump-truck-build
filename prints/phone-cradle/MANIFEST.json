@@ -1,0 +1,43 @@
+{
+  "author": "Colin Rooney",
+  "copyright": "\u00a9 2026 Rooney Industries LLC",
+  "license": "MIT",
+  "license_file": "../../LICENSE",
+  "units": "design millimetres (STL has no unit metadata)",
+  "conversion": {
+    "format": "ASCII STL",
+    "description": "Supplied ASCII conversion preserves source normals, vertices and triangle order exactly; no geometry or orientation changes."
+  },
+  "entries": [
+    {
+      "file": "v26_tray.stl",
+      "source_binary_sha256": "084add24f31e630997ea7aaa33f46625d166a8eff02c1cef7cccd5204b02496c",
+      "sha256": "df569fd4cd7241cff6f7f9549e8b74121478a4ee8f4b476316072e5e63e4913b",
+      "triangles": 1164
+    },
+    {
+      "file": "v26_riser.stl",
+      "source_binary_sha256": "d084b6fcc99c001a6ad377130857c1fa003515016ddbae5077c33b3f0f4b9c20",
+      "sha256": "b3cdb1c9a860bc14f4dc3aab7b58f149431fd61d6d912af7f65c40eb6763cc12",
+      "triangles": 1616
+    },
+    {
+      "file": "v66_tbar.stl",
+      "source_binary_sha256": "91c119d26e8e08c3da1cf3ccd98f91a4be5f10c06cd18406883d6fbbe502a075",
+      "sha256": "334eddad224fa4ce49d60293f44bd3f495be52b2313d7867b195e7d58a7a3778",
+      "triangles": 404
+    },
+    {
+      "file": "v21b_pin.stl",
+      "source_binary_sha256": "afe197474d81a2835d01a658e7e2cc7c6750aab4279b34066d6aeb3a71d74ddf",
+      "sha256": "e938b21af23fca707dcf3dcc4d62e63d07f4f44c9876303cc4d6f9c49f238f4a",
+      "triangles": 68
+    },
+    {
+      "file": "v10_wedge5.stl",
+      "source_binary_sha256": "7f0fc7501a5e2064cea1f17d000993868fb1e6280b5d4673cba734d152ed1de0",
+      "sha256": "bb59e4edb99732adbaffc47aec0314f6f4ba8db441b02bbf908815178da2cc5e",
+      "triangles": 92
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+# large media and sample data live on the Crucial drive until a release decision
+*.mp4
+*.mov
+*.MOV
+*.heic
+*.HEIC
+# binaries are refused by the gate (suffix allowlist is empty); EXIF, PDF metadata and bag files carry
+# locations, owners and hostnames - lifted only by a release decision
+*.jpg
+*.jpeg
+*.png
+*.pdf
+*.zip
+*.bag
+*.mcap
+*.db3
+*.3mf
+*.JPG
+*.JPEG
+*.PNG
+*.PDF
+*.ZIP
+# the reverse-trial client writes its default ledger here (local trial records, not deliverables)
+src/orin/trials/
